@@ -1,0 +1,162 @@
+{
+  "bags": [
+    {
+      "id": 1,
+      "name": "Shoulder Bags",
+      "brand": "Brand A",
+      "price": 120.99,
+      "color": "000",
+      "material": "Cloth",
+      "inStock": true,
+      "image": "https://s3-alpha-sig.figma.com/img/b839/a54f/f97d06f597194b320a854d249de3f8ac?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IgMJnkrE2lEHmBzgcDDgbEY94ovam54bl~SrpJZfbTrJNKLJdY4Y~08Gw~4JvbviRDDb-ARRg8rH5Dj5NTUGYpOGc6b7EccG9HcTl-HX1GJ7OUzvb0J5dm3Os0YJZHJw1GDo6DJbooJf3~Bm7lo2xgzMriGo3UClaGP88fhbjl1r~2droo9SxSAhUvw5cmyZM3zB7YJewWo8nIPNgWgX-UXIA95aWiQeB6SxP9LTObCnyM~D8axMKhYB3S1Iycp36NBpLt2wUwD8aqsZtAjjXNGVIxh38U3lxs2gsLjuM0kHcykx6Jpxnsx-dUYhgKh65QyZ80M8wP-IiN~Oc~Z7UQ__",
+      "description": "A stylish leather shoulder bag, perfect for any occasion.",
+      "featured":true,
+      "bestseller":false,
+      "size":"XS"
+    },
+    {
+      "id": 2,
+      "name": "Hand bag",
+      "brand": "Brand B",
+      "price": 45.5,
+      "color": "f5f5dc",
+      "material": "Cotton",
+      "inStock": true,
+      "image": "https://s3-alpha-sig.figma.com/img/cf5c/fc2a/4a396c2ed86b4dc2ff22aa5852410d53?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C~Gr2qH3wH2sK3GKs3O9ie~LeEE0L~kHJedW1ctKmfBEkbPgFG-F1qYw6mHyA9qQsFN1lKWNTZ0cns92oT2NduX7H-JNd41mRRgvK6ht2t1vpl4~i3SOtLz4gcqQ5dsrSE~jmBhYOr9i1Ic~-2z81C5tygIp9u-nfVszQGs7jTUzKWkXD9shKryN~gWpmJs0pKKyYvlvZ70aSF9MzO1fY75fBjz6To91IwQEyGAcp1eFmM3unBCx9izHUvefB-LSU5CLOzbGaz2iO5LzDc-2tG9gDUthe6Clthos0F49X80FubcKXVccfoE2opsa6mQU4nVN9WBUVUgo1qmddev3Vw__",
+      "description": "A versatile canvas tote bag with plenty of space for everyday items.",
+      "featured":false,
+      "bestseller":true,
+      "size":"S"
+
+    },
+    {
+      "id": 3,
+      "name": "Backpack",
+      "brand": "Brand C",
+      "price": 299.99,
+      "color": "ff0000",
+      "material": "Denim-Jeans",
+      "inStock": false,
+      "image": "https://s3-alpha-sig.figma.com/img/7529/9645/5652baba89f40da1967f408bcdb1ee23?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A72~f2iv61PE11JF9a8Do0dn2IEtZ5iZo8HcMyMhLN40GRTzF6BTOYNWr1SZrxroLFYgHrvFvA9IDB8Yn9r9jq6oBA7G-5sh5w117LQ3Vsnb-5u5MzWKu5U~mR2P774UB3jlVYFeJVW1di1-IHSU5pM8u8-wP6E-sEn-bNMZlnTt8YiJ93V8mKRP6NoamAqIH4-AxFCU6SP0cwlVo4riIUJT1gOwuu4HxO9YZLW2k~b7GQFgpS0CjdBGdMTd9-TMnBCbX2Cu-ZsjCb7spZRJBIDa1AQ4ODZi-kr3E2nRRC0iuNxkN9XhHQiikkNmVhsUedwOj9hLh6Z5l93d9DlxXg__",
+      "description": "Luxury designer handbag with premium features and stylish design.",
+      "featured":false,
+      "bestseller":false,
+      "size":"XS"
+
+    },
+    {
+      "id": 4,
+      "name": "Evenings bags",
+      "brand": "Brand D",
+      "price": 75.0,
+      "color": "000",
+      "material": "Faux Fur",
+      "inStock": true,
+      "image": "https://s3-alpha-sig.figma.com/img/3bf4/9f6f/fdb1dc0fcecdc64b53c6dd0bdac4b7db?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=G-ro5UuRpoDsO5v3NLFNPgMN~-UFmOPY3oTwe0BW7IJLIQYIRqWyWoXzo0CW~mvduFPa3UD6cf1HS3UGq0OWv0-o2y8KL7EgBPXZxugX1Ac6~vh~9ulxqTgb5YSK5f1w28FFrlYx2ZrmQK7B8D814YeTCmwM7H~SJv1wrmckcLafgoa9~yWR6yk6eLNOiTXPyf5SZ8Z77Lc5puVwmnKc8h1JqHYg~ReG29090qKrAOXRMAV0t0m6wPl~1nkhmEzi61CxFPWSqe247PGW38lLUUbkBp8vN8xoVYyhfj4uq2NlR0hOfdKG1N0nTSTNP1uLm5m-lnmxbEJXyf5rpZqu8w__",
+      "description": "Compact crossbody bag with adjustable straps and modern design.",
+      "featured":false,
+      "bestseller":false,
+      "size":"M"
+
+    },
+    {
+      "id": 5,
+      "name": "Postman bag",
+      "brand": "Brand D",
+      "price": 75.0,
+      "color": "964B00",
+      "material": "Exotic Leathers",
+      "inStock": true,
+      "image":"https://s3-alpha-sig.figma.com/img/3bf4/9f6f/fdb1dc0fcecdc64b53c6dd0bdac4b7db?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=G-ro5UuRpoDsO5v3NLFNPgMN~-UFmOPY3oTwe0BW7IJLIQYIRqWyWoXzo0CW~mvduFPa3UD6cf1HS3UGq0OWv0-o2y8KL7EgBPXZxugX1Ac6~vh~9ulxqTgb5YSK5f1w28FFrlYx2ZrmQK7B8D814YeTCmwM7H~SJv1wrmckcLafgoa9~yWR6yk6eLNOiTXPyf5SZ8Z77Lc5puVwmnKc8h1JqHYg~ReG29090qKrAOXRMAV0t0m6wPl~1nkhmEzi61CxFPWSqe247PGW38lLUUbkBp8vN8xoVYyhfj4uq2NlR0hOfdKG1N0nTSTNP1uLm5m-lnmxbEJXyf5rpZqu8w__",
+      "description": "Compact crossbody bag with adjustable straps and modern design.",
+      "featured":false,
+      "bestseller":false,
+      "size":"S"
+
+    }, {
+      "id": 6,
+      "name": "Belt Bags",
+      "brand": "Brand D",
+      "price": 75.0,
+      "color": "ff0000",
+      "material": "Faux Fur",
+      "inStock": true,
+      "image": "https://s3-alpha-sig.figma.com/img/7529/9645/5652baba89f40da1967f408bcdb1ee23?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A72~f2iv61PE11JF9a8Do0dn2IEtZ5iZo8HcMyMhLN40GRTzF6BTOYNWr1SZrxroLFYgHrvFvA9IDB8Yn9r9jq6oBA7G-5sh5w117LQ3Vsnb-5u5MzWKu5U~mR2P774UB3jlVYFeJVW1di1-IHSU5pM8u8-wP6E-sEn-bNMZlnTt8YiJ93V8mKRP6NoamAqIH4-AxFCU6SP0cwlVo4riIUJT1gOwuu4HxO9YZLW2k~b7GQFgpS0CjdBGdMTd9-TMnBCbX2Cu-ZsjCb7spZRJBIDa1AQ4ODZi-kr3E2nRRC0iuNxkN9XhHQiikkNmVhsUedwOj9hLh6Z5l93d9DlxXg__",
+      "description": "Compact crossbody bag with adjustable straps and modern design.",
+      "featured":false,
+      "bestseller":false,
+      "size":"M"
+
+    },
+    {
+      "id": 7,
+      "name": "Belt Bags",
+      "brand": "Brand D",
+      "price": 75.0,
+      "color": "FFC0CB",
+      "material": "Glitter",
+      "inStock": true,
+      "image": "https://s3-alpha-sig.figma.com/img/7529/9645/5652baba89f40da1967f408bcdb1ee23?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A72~f2iv61PE11JF9a8Do0dn2IEtZ5iZo8HcMyMhLN40GRTzF6BTOYNWr1SZrxroLFYgHrvFvA9IDB8Yn9r9jq6oBA7G-5sh5w117LQ3Vsnb-5u5MzWKu5U~mR2P774UB3jlVYFeJVW1di1-IHSU5pM8u8-wP6E-sEn-bNMZlnTt8YiJ93V8mKRP6NoamAqIH4-AxFCU6SP0cwlVo4riIUJT1gOwuu4HxO9YZLW2k~b7GQFgpS0CjdBGdMTd9-TMnBCbX2Cu-ZsjCb7spZRJBIDa1AQ4ODZi-kr3E2nRRC0iuNxkN9XhHQiikkNmVhsUedwOj9hLh6Z5l93d9DlxXg__",
+      "description": "Compact crossbody bag with adjustable straps and modern design.",
+      "featured":false,
+      "bestseller":false,
+      "size":"S"
+
+    },{
+      "id": 8,
+      "name": "Shoulder Bags",
+      "brand": "Brand D",
+      "price": 75.0,
+      "color": "964B00",
+      "material": "Cotton",
+      "inStock": true,
+      "image": "https://s3-alpha-sig.figma.com/img/7529/9645/5652baba89f40da1967f408bcdb1ee23?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=A72~f2iv61PE11JF9a8Do0dn2IEtZ5iZo8HcMyMhLN40GRTzF6BTOYNWr1SZrxroLFYgHrvFvA9IDB8Yn9r9jq6oBA7G-5sh5w117LQ3Vsnb-5u5MzWKu5U~mR2P774UB3jlVYFeJVW1di1-IHSU5pM8u8-wP6E-sEn-bNMZlnTt8YiJ93V8mKRP6NoamAqIH4-AxFCU6SP0cwlVo4riIUJT1gOwuu4HxO9YZLW2k~b7GQFgpS0CjdBGdMTd9-TMnBCbX2Cu-ZsjCb7spZRJBIDa1AQ4ODZi-kr3E2nRRC0iuNxkN9XhHQiikkNmVhsUedwOj9hLh6Z5l93d9DlxXg__",
+      "description": "Compact crossbody bag with adjustable straps and modern design.",
+      "featured":false,
+      "bestseller":false,
+      "size":"XS"
+
+    }
+  ],
+  "category": [
+    {
+      "id": 1,"name": "Shoulder Bags","image": "./assets/images/PinkBag.jpg","description": "A stylish leather shoulder bag, perfect for any occasion."
+    },
+    {
+      "id": 2,"name": "Hand bag","image": "./assets/images/HandBag.jpg","description": "A versatile canvas tote bag with plenty of space for everyday items."
+    },
+    {
+      "id": 3,"name": "Backpack","image": "./assets/images/Bagpack.jpg","description": "Luxury designer handbag with premium features and stylish design."
+    },
+    {
+      "id": 4,"name": "Evenings bags","image": "./assets/images/EveningBags.jpg","description": "Compact crossbody bag with adjustable straps and modern design."
+    }, 
+    {
+      "id": 5,"name": "Postman bag","image": "./assets/images/EveningBags.jpg","description": "Compact crossbody bag with adjustable straps and modern design."
+    },
+     {
+      "id": 6,"name": "Belt Bags","image": "./assets/images/EveningBags.jpg","description": "Compact crossbody bag with adjustable straps and modern design."
+    }
+  ],
+  "colors":[
+      {"id":1,"name":"red","code":"#ff0000"},
+      {"id":2,"name":"black","code":"#000"},
+      {"id":3,"name":"beige","code":"#f5f5dc"},
+      {"id":4,"name":"brown","code":"#964B00"},
+      {"id":5,"name":"pink","code":"#FFC0CB"}
+     ],
+  "sizes":[
+      {"id":1,"name":"XS"},
+      {"id":2,"name":"S"},
+      {"id":3,"name":"M"}
+     ],
+  "materials":[
+      {"id":1,"name":"Cloth"},
+      {"id":2,"name":"Cotton"},
+      {"id":3,"name":"Denim-Jeans"},
+      {"id":4,"name":"Faux Fur"},
+      {"id":5,"name":"Exotic Leathers"},
+      {"id":6,"name":"Glitter"}
+
+     ]
+}
