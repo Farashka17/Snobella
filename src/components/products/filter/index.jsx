@@ -12,7 +12,7 @@ const Filter = () => {
   const [categories,setCategories]=useState([]);
   const [colors,setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
-  const [materials, setMaterials] = useState("");
+  const [materials, setMaterials] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("http://localhost:3001/bags");
