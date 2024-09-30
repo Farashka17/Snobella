@@ -18,9 +18,9 @@ const BottomHeader = () => {
       <div className="container max-w-[1128px] py-3 gap-[50px] justify-between items-center mx-auto flex flex-col">
         {/* yuxari */}
         <div className="flex gap-[70px] items-center">
-          <div>
+        <Link to="/"> <button>
             <p className="text-[40px] font-bold">Snobella</p>
-          </div>
+          </button></Link> 
           <div className="relative">
             <input
               placeholder="Search all product"
@@ -30,19 +30,19 @@ const BottomHeader = () => {
               <IoSearch className="w-6 h-6" />
             </div>
           </div>
-          <div className="flex gap-[26px] items-center">
-            <div className="flex items-center gap-[10px]">
+          <div className="flex gap-[20px] items-center">
+            <button className="flex items-center gap-[10px]">
               <LuUser2 className="w-6 h-6" />
               <p className="text-[14px] font-medium text-[#2E2E2E]">Sign Up</p>
-            </div>
-            <div className="flex items-center gap-[10px]">
+            </button>
+            <button className="flex items-center gap-[10px]">
               <FaRegHeart className="w-6 h-6" />
               <p className="text-[14px] font-medium text-[#2E2E2E]">Wishlist</p>
-            </div>
-            <div className="flex items-center gap-[10px]">
+            </button>
+          <Link to="/cart" ><button className="flex items-center gap-[10px]">
               <HiOutlineShoppingBag className="w-6 h-6" />
               <p className="text-[14px] font-medium text-[#2E2E2E]">Basket</p>
-            </div>
+            </button></Link> 
           </div>
         </div>
         {/* asagi */}
@@ -50,9 +50,9 @@ const BottomHeader = () => {
           <ul className="flex items-start gap-[53px] w-[1128px]">
           {
             navElements.map((navElement ,index) => (
-              <li key={index}  className="text-[#273142] text-[16px] font-normal w-[122px]">
+             <button><li key={index}  className="text-[#273142] text-[16px] font-normal w-[122px]">
                {navElement.title}
-              </li>
+              </li></button> 
             ))}
             </ul>
         </div>

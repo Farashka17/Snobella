@@ -8,12 +8,11 @@ import BigDelivery from '../../components/common/bigDelivery'
 const ProductPage = () => {
   return (
     <div>
-      <Header/>
+    
       <DetailPage/>
-
       <BestSellerAndFeatured title='You may also like'/>
       <BigDelivery/>
-      <Footer/>
+      
     </div>
   )
 }

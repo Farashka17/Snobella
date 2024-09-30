@@ -16,7 +16,7 @@ useEffect(()=>{
   return (
     <div className="bg-[#fff] ">
       <div className="container max-w-[1128px]  flex justify-between items-center mx-auto py-[80px] ">
-      {bagCategories && bagCategories.map(category=>
+      {bagCategories && bagCategories.slice(0,4).map(category=>
        <SingleCategory key={category.id} name={category.name} image={category.image}/>
       )}
 

@@ -9,14 +9,14 @@ import BestSellerAndFeatured from '../../components/common/bestSellerAndFeatured
 const HomePage = () => {
   return (
     <>
-    <Header/>
+
     <Hero/>
     <Delivery/>
     <Category/>
     <BestSellerAndFeatured title="Featured Products"/>
     <BestSellerAndFeatured title="Bestseller"/>
     <BestSellerAndFeatured title="Discount Products"/>
-    <Footer />
+   
    
     </>
   )

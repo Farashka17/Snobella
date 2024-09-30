@@ -120,30 +120,30 @@
   ],
   "category": [
     {
-      "id": 1,"name": "Shoulder Bags","image": "./assets/images/PinkBag.jpg","description": "A stylish leather shoulder bag, perfect for any occasion."
+      "id": 1,"name": "Shoulder Bags","image": "./src/assets/images/ShoulderBag.png","description": "A stylish leather shoulder bag, perfect for any occasion."
     },
     {
-      "id": 2,"name": "Hand bag","image": "./assets/images/HandBag.jpg","description": "A versatile canvas tote bag with plenty of space for everyday items."
+      "id": 2,"name": "Hand bag","image": "./src/assets/images/HandBag.png","description": "A versatile canvas tote bag with plenty of space for everyday items."
     },
     {
-      "id": 3,"name": "Backpack","image": "./assets/images/Bagpack.jpg","description": "Luxury designer handbag with premium features and stylish design."
+      "id": 3,"name": "Backpack","image": "./src/assets/images/Bagpack.png","description": "Luxury designer handbag with premium features and stylish design."
     },
     {
-      "id": 4,"name": "Evenings bags","image": "./assets/images/EveningBags.jpg","description": "Compact crossbody bag with adjustable straps and modern design."
+      "id": 4,"name": "Evenings bags","image": "./src/assets/images/EveningBags.png","description": "Compact crossbody bag with adjustable straps and modern design."
     }, 
     {
-      "id": 5,"name": "Postman bag","image": "./assets/images/EveningBags.jpg","description": "Compact crossbody bag with adjustable straps and modern design."
+      "id": 5,"name": "Postman bag","image": "./src/assets/images/EveningBags.png","description": "Compact crossbody bag with adjustable straps and modern design."
     },
      {
-      "id": 6,"name": "Belt Bags","image": "./assets/images/EveningBags.jpg","description": "Compact crossbody bag with adjustable straps and modern design."
+      "id": 6,"name": "Belt Bags","image": "./src/assets/images/EveningBags.png","description": "Compact crossbody bag with adjustable straps and modern design."
     }
   ],
   "colors":[
-      {"id":1,"name":"red","code":"#ff0000"},
-      {"id":2,"name":"black","code":"#000"},
-      {"id":3,"name":"beige","code":"#f5f5dc"},
-      {"id":4,"name":"brown","code":"#964B00"},
-      {"id":5,"name":"pink","code":"#FFC0CB"}
+      {"id":1,"name":"red","code":"[#FF0000]"},
+      {"id":2,"name":"black","code":"[#000000]"},
+      {"id":3,"name":"beige","code":"[#F5F5DC]"},
+      {"id":4,"name":"brown","code":"[#964B00]"},
+      {"id":5,"name":"pink","code":"[#FFC0CB]"}
      ],
   "sizes":[
       {"id":1,"name":"XS"},

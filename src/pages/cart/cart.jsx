@@ -6,9 +6,9 @@ import Cart from '../../components/cart'
 const CartPage = () => {
   return (
     <>
-    <Header/>
+
     <Cart/>
-    <Footer />
+    
    
     </>
   )

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SingleProduct from '../../common/singleProduct';
 // import { getAllCategory } from '../../../../api/service';
 
-const BagsList = ({products}) => {
+const BagsList = () => {
   const [bags,setBag]= useState([]);
   useEffect(()=>{
     const fetchData = async () => {
