@@ -3,8 +3,11 @@ import SingleCartProduct from '../singleCartProducts'
 
 const CartProducts = () => {
   return (
-    <div>
+    <div className='flex flex-col gap-6'>
         <SingleCartProduct/>
+        <SingleCartProduct/>
+        <SingleCartProduct/>
+
     </div>
   )
 }

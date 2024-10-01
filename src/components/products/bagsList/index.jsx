@@ -19,7 +19,7 @@ const BagsList = () => {
   return (
     <div className='grid grid-cols-2 gap-[23px] '>
      {bags && bags.map(bag=>
-       <SingleProduct key={bag.id} name={bag.description} image={bag.image}/>
+       <SingleProduct key={bag.id} description={bag.description} image={bag.image}/>
       )}
          
     </div>

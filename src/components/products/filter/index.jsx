@@ -8,7 +8,7 @@ const Filter = () => {
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
   const [materials, setMaterials] = useState([]); 
-  const [items, setItems] = useState(bags);
+  // const [items, setItems] = useState(bags);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,13 +49,13 @@ const Filter = () => {
     
   }, []);
 
-  const filterCategories = (category) => {
-    const updateBags = bags.filter((bag) => {
-      return bag.categoryId === category.id;
-    });
-    setItems(updateBags);
-    console.log("hello ")
-  };
+  // const filterCategories = (category) => {
+  //   const updateBags = bags.filter((bag) => {
+  //     return bag.categoryId === category.id;
+  //   });
+  //   setItems(updateBags);
+  //   console.log("hello ")
+  // };
 
   return (
     <div className="w-[326px] flex flex-col gap-6">
