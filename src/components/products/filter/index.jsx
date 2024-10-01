@@ -1,28 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
-import { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
 const Filter = () => {
-  const [bagCategories, setBagCategories] = useState([]);
-  // const [uniqueBagCategories, setUniqueBagCategories] = useState([]);
-  // const [uniqueMaterials, setUniqueMaterials] = useState([]);
-  // const [uniqueColors, setUniqueColors] = useState([]);
-  // const [uniqueSizes, setUniqueSizes] = useState([]);
+  const [bags, setBags] = useState([]);
   const [categories, setCategories] = useState([]);
   const [colors, setColors] = useState([]);
   const [sizes, setSizes] = useState([]);
-  const [materials, setMaterials] = useState([]);
+  const [materials, setMaterials] = useState([]); 
+  const [items, setItems] = useState(bags);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("http://localhost:3001/bags");
       const result = await response.json();
-      setBagCategories(result);
+      setBags(result);
+      setItems(result); // Başlangıçta tüm çantaları göster
     };
-    
     fetchData();
-  
-    const fetchCategory= async () => {
+
+    const fetchCategory = async () => {
       const response = await fetch("http://localhost:3001/category");
       const result = await response.json();
       setCategories(result);
@@ -43,61 +40,69 @@ const Filter = () => {
     };
     fetchSizes();
  
-    const fetchMaterials= async () => {
+    const fetchMaterials = async () => {
       const response = await fetch("http://localhost:3001/materials");
       const result = await response.json();
       setMaterials(result);
     };
     fetchMaterials();
+    
   }, []);
-  
+
+  const filterCategories = (category) => {
+    const updateBags = bags.filter((bag) => {
+      return bag.categoryId === category.id;
+    });
+    setItems(updateBags);
+    console.log("hello ")
+  };
+
   return (
     <div className="w-[326px] flex flex-col gap-6">
-      {/* Category */}
+      {/* Kategoriler */}
       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Categories</p>
+          <p className="text-[20px] font-medium text-[#212121]">Kategoriler</p>
           <IoIosArrowUp />
         </div>
         <div>
           <ul className="flex flex-col gap-4">
-            {categories &&
-              categories.map((bag) => (
-                <li key={bag.id}>
-                  <button>
-                    {" "}
-                    <p>{bag.name}</p>
-                  </button>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
-
-      {/* Material*/}
-      <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
-        <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Materials</p>
-          <IoIosArrowUp />
-        </div>
-        <div>
-          <ul className="flex flex-col gap-4">
-            {materials.map((bag) => (
-              <li key={bag.id} className="flex gap-[14px] items-center">
-                <button className="flex gap-[14px] items-center">
-                  <input type="checkbox" />
-                  <p>{bag.name}</p>
+            {categories.map((category) => (
+              <li key={category.id}>
+                <button onClick={() => filterCategories(items)}>
+                  <p>{category.name}</p>
                 </button>
               </li>
             ))}
           </ul>
         </div>
       </div>
-      {/* Price */}
+
+      {/* Malzemeler */}
+      <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
+        <div className="flex justify-between items-center">
+          <p className="text-[20px] font-medium text-[#212121]">Malzemeler</p>
+          <IoIosArrowUp />
+        </div>
+        <div>
+          <ul className="flex flex-col gap-4">
+            {materials.map((material) => (
+              <li key={material.id} className="flex gap-[14px] items-center">
+                <button className="flex gap-[14px] items-center">
+                  <input type="checkbox" />
+                  <p>{material.name}</p>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Fiyat */}
       <div>
         <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
           <div className="flex justify-between items-center">
-            <p className="text-[20px] font-medium text-[#212121]">Price</p>
+            <p className="text-[20px] font-medium text-[#212121]">Fiyat</p>
             <IoIosArrowUp />
           </div>
           <div className="flex items-center gap-2">
@@ -115,23 +120,24 @@ const Filter = () => {
               />
             </div>
             <button className="px-[15px] py-[10px] bg-[#EF544F] rounded-[8px] text-white">
-              <IoSearch className="w-[20px] h-[20px]" />{" "}
+              <IoSearch className="w-[20px] h-[20px]" />
             </button>
           </div>
         </div>
       </div>
-      {/* Sizes */}
+
+      {/* Boyutlar */}
       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Size</p>
+          <p className="text-[20px] font-medium text-[#212121]">Boyutlar</p>
           <IoIosArrowUp />
         </div>
         <div>
           <ul className="flex gap-4">
-            {sizes.map((bag) => (
-              <li key={bag.id} className="flex gap-[14px] items-center">
+            {sizes.map((size) => (
+              <li key={size.id} className="flex gap-[14px] items-center">
                 <button className="py-[7px] px-[23px] rounded-[8px] border border-[#C8C8C8] text-[16px] font-normal">
-                  {bag.name}
+                  {size.name}
                 </button>
               </li>
             ))}
@@ -139,17 +145,15 @@ const Filter = () => {
         </div>
       </div>
 
-      {/* Colors */}
+      {/* Renkler */}
       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Colors</p>
+          <p className="text-[20px] font-medium text-[#212121]">Renkler</p>
           <IoIosArrowUp />
         </div>
         <div className="flex flex-wrap gap-[17px]">
-          {colors.map((bag) => (
-            <button key={bag.id} className={`bg-${bag.code} w-[18px] h-[18px] rounded-full`}>
-              {/* {bag.name} */}
-            </button>
+          {colors.map((color) => (
+            <button key={color.id} className={`bg-[${color.code}] w-[18px] h-[18px] rounded-full`} />
           ))}
         </div>
       </div>

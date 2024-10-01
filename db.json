@@ -2,6 +2,7 @@
   "bags": [
     {
       "id": 1,
+      "categoryId":1,
       "name": "Shoulder Bags",
       "brand": "Brand A",
       "price": 120.99,
@@ -16,6 +17,7 @@
     },
     {
       "id": 2,
+      "categoryId":2,
       "name": "Hand bag",
       "brand": "Brand B",
       "price": 45.5,
@@ -31,6 +33,7 @@
     },
     {
       "id": 3,
+      "categoryId":3,
       "name": "Backpack",
       "brand": "Brand C",
       "price": 299.99,
@@ -46,6 +49,7 @@
     },
     {
       "id": 4,
+      "categoryId":4,
       "name": "Evenings bags",
       "brand": "Brand D",
       "price": 75.0,
@@ -61,6 +65,7 @@
     },
     {
       "id": 5,
+      "categoryId":5,
       "name": "Postman bag",
       "brand": "Brand D",
       "price": 75.0,
@@ -75,6 +80,7 @@
 
     }, {
       "id": 6,
+      "categoryId":6,
       "name": "Belt Bags",
       "brand": "Brand D",
       "price": 75.0,
@@ -90,6 +96,7 @@
     },
     {
       "id": 7,
+      "categoryId":1,
       "name": "Belt Bags",
       "brand": "Brand D",
       "price": 75.0,
@@ -104,6 +111,7 @@
 
     },{
       "id": 8,
+      "categoryId":2,
       "name": "Shoulder Bags",
       "brand": "Brand D",
       "price": 75.0,
