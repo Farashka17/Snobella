@@ -9,6 +9,8 @@ import HomePage from './pages/home/home'
 import ProductList from './pages/productList/productList'
 import ProductPage from './pages/productPage/productPage'
 import {Routes,Route} from 'react-router-dom'
+import RegisterPage from './pages/register/registerPage'
+import LoginPage from './pages/login/loginPage'
 
 function App() {
   
@@ -21,8 +23,13 @@ function App() {
       <Route path="/product/:productId" element={<ProductPage/>} />
       <Route path="/cart" element={<CartPage/>} />
       <Route path="*" element={<HomePage/>} />
+      <Route path="/register" element={<RegisterPage/>} />
+      <Route path="/login" element={<LoginPage/>} />
+
     </Routes>
     <Footer/>
+    {/* <RegisterPage/>
+    <LoginPage/> */}
     </>
   )
 }

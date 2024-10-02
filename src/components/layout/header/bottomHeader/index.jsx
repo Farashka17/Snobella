@@ -31,10 +31,10 @@ const BottomHeader = () => {
             </div>
           </div>
           <div className="flex gap-[20px] items-center">
-            <button className="flex items-center gap-[10px]">
+        <Link to="/login" > <button className="flex items-center gap-[10px]">
               <LuUser2 className="w-6 h-6" />
-              <p className="text-[14px] font-medium text-[#2E2E2E]">Sign Up</p>
-            </button>
+              <p className="text-[14px] font-medium text-[#2E2E2E]">Sign In</p>
+            </button></Link>
             <button className="flex items-center gap-[10px]">
               <FaRegHeart className="w-6 h-6" />
               <p className="text-[14px] font-medium text-[#2E2E2E]">Wishlist</p>

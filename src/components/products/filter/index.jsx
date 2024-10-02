@@ -1,7 +1,6 @@
 // import React, { useEffect, useState } from "react";
 // import { IoIosArrowUp } from "react-icons/io";
 // import { IoSearch } from "react-icons/io5";
-// import {doFilter} from './../bagsList'
 // const Filter = () => {
 //   const [bags, setBags] = useState([]);
 //   const [categories, setCategories] = useState([]);
@@ -51,6 +50,9 @@
 
 //   return (
 //     <div className="w-[326px] flex flex-col gap-6">
+//          <button className="py-[7px] px-[23px] rounded-[8px] border border-[#C8C8C8] text-[16px] font-normal">
+//                   Reset filter
+//                 </button>
 //       {/* Kategoriler */}
 //       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
 //         <div className="flex justify-between items-center">
@@ -160,3 +162,12 @@
 // };
 
 // export default Filter;
+
+
+
+
+
+
+
+
+

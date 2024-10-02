@@ -6,9 +6,11 @@ import { useEffect, useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import SingleProduct from './../common/singleProduct';
-
+import { useStore } from 'zustand';
+import useStore from './../../store/store'
 
 const Products = () => {
+  const {color,size,category,material,setFields}=useStore()
   const [bags, setBags] = useState([]);
   const [categories, setCategories] = useState([]);
   const [colors, setColors] = useState([]);
@@ -56,25 +58,39 @@ const Products = () => {
     fetchMaterials();
     
   }, []);
-  // console.log(bags)
- ///////////////////////////////////////////////
+  console.log(bags)
+ /////////////////////////////////////////////
  const doFilter = (id,type) => {
   console.log("filter");
   console.log(id, "id");
 
-let newFilter=[]
-if(type=="color"){
-   newFilter = bags.filter((bag)=>bag.colorId == id)
+
+// if(type=="color"){
+//    newFilter = bags.filter((bag)=>bag.colorId == id)
+// }
+// if(type=="size"){
+//    newFilter = bags.filter((bag)=>bag.sizeId == id)
+// }
+// if(type=="material"){
+//   newFilter = bags.filter((bag)=>bag.materialId == id)
+// }
+// if(type=="category"){
+//   newFilter = bags.filter((bag)=>bag.categoryId == id)
+// }
+let newFilter = bags 
+if(color){
+  newFilter = [...newFilter].filter((bag)=>bag.colorId == id)
 }
-if(type=="size"){
-   newFilter = bags.filter((bag)=>bag.sizeId == id)
+if(size){
+  newFilter = [...newFilter].filter((bag)=>bag.sizeId == id)
 }
-if(type=="material"){
-  newFilter = bags.filter((bag)=>bag.materialId == id)
+if(category){
+  newFilter = [...newFilter].filter((bag)=>bag.categoryId == id)
 }
-if(type=="category"){
-  newFilter = bags.filter((bag)=>bag.categoryId == id)
+if(material){
+  newFilter = [...newFilter].filter((bag)=>bag.materialId == id)
 }
+
 
 
 setFilteredBags(newFilter);
@@ -94,32 +110,36 @@ console.log(filteredBags)
      <div className='flex gap-[58px] items-start'>
      {/* <Filter /> */}
      
-     <div className="w-[326px] flex flex-col gap-6">
+      <div className="w-[326px] flex flex-col gap-6">
       <button className='bg-red-300 py-3 px-5 rounded-[8px]'
-       onClick={()=>{resetFilter("reset")}}>Reset all categories</button>
+       onClick={()=>{resetFilter("reset")}}>Reset all categories</button> 
       {/* Kategoriler */}
       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Kategoriler</p>
+          <p className="text-[20px] font-medium text-[#212121]">Category</p>
           <IoIosArrowUp />
         </div>
         <div>
           <ul className="flex flex-col gap-4">
             {categories.map((category) => (
               <li key={category.id}>
-                <button  onClick={(id)=>{doFilter(category.id,"category")}}> 
+                <button  onClick={(id)=>{
+                  doFilter(category.id,"category");
+              setFields({category:true})
+
+                 }}> 
                   <p>{category.name}</p>
                 </button>
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </div> 
 
       {/* Malzemeler */}
       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Malzemeler</p>
+          <p className="text-[20px] font-medium text-[#212121]">Material</p>
           <IoIosArrowUp />
         </div>
         <div>
@@ -127,7 +147,10 @@ console.log(filteredBags)
             {materials.map((material) => (
               <li key={material.id} className="flex gap-[14px] items-center">
                 <button className="flex gap-[14px] items-center" 
-                      onClick={(id)=>{doFilter(material.id,"material")}}>
+                      onClick={(id)=>{doFilter(material.id,"material");
+              setFields({material:true})
+
+                      }}>
                   <input type="checkbox" />
                   <p>{material.name}</p>
                 </button>
@@ -135,13 +158,13 @@ console.log(filteredBags)
             ))}
           </ul>
         </div>
-      </div>
+      </div> 
 
       {/* Fiyat */}
       <div>
         <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
           <div className="flex justify-between items-center">
-            <p className="text-[20px] font-medium text-[#212121]">Fiyat</p>
+            <p className="text-[20px] font-medium text-[#212121]">Price</p>
             <IoIosArrowUp />
           </div>
           <div className="flex items-center gap-2">
@@ -163,12 +186,12 @@ console.log(filteredBags)
             </button>
           </div>
         </div>
-      </div>
+      </div> 
 
       {/* Boyutlar */}
-      <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
+       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Boyutlar</p>
+          <p className="text-[20px] font-medium text-[#212121]">Size</p>
           <IoIosArrowUp />
         </div>
         <div>
@@ -176,19 +199,22 @@ console.log(filteredBags)
             {sizes.map((size) => (
               <li key={size.id} className="flex gap-[14px] items-center">
                 <button className="py-[7px] px-[23px] rounded-[8px] border border-[#C8C8C8] text-[16px] font-normal"
-                onClick={(id)=>{doFilter(size.id,"size")}}>
+                onClick={(id)=>{doFilter(size.id,"size");
+              setFields({size:true})
+
+                }}>
                   {size.name}
                 </button>
               </li>
             ))}
           </ul>
         </div>
-      </div>
+      </div> 
 
       {/* Renkler */}
-      <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
+       <div className="w-full rounded-[8px] py-4 px-10 border border-[#D0D0D0] flex flex-col gap-6">
         <div className="flex justify-between items-center">
-          <p className="text-[20px] font-medium text-[#212121]">Renkler</p>
+          <p className="text-[20px] font-medium text-[#212121]">Color</p>
           <IoIosArrowUp />
         </div>
         <div>
@@ -196,20 +222,22 @@ console.log(filteredBags)
           {colors.map((color) => (
             <li>
             <button key={color.id} className={`w-[18px] h-[18px] rounded-full`} onClick={(id)=>{
-              doFilter(color.id,"color")
+              doFilter(color.id,"color");
+              setFields({color:true})
             }}>{color.name}</button>
             </li>
           ))}
           </ul>
         </div>
       </div>
-    </div>
-     {/* <BagsList /> */}
+      </div> 
+
+      {/* <BagsList/> */}
      <div className='grid grid-cols-2 gap-[23px] '>
       {filteredBags && filteredBags.map(bag => 
         <SingleProduct key={bag.id} description={bag.description} image={bag.image} />
       )}
-    </div>
+    </div> 
      </div>
 
 
