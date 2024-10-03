@@ -1,61 +1,83 @@
-// import React, { useEffect, useState } from 'react';
-// import SingleProduct from '../../common/singleProduct';
 
-// const BagsList = () => {
-   
-//   const [bags, setBag] = useState([]);
-//   const [filteredBags, setFilteredBags] = useState([])
+import React, { useEffect, useState } from "react";
+import SingleProduct from "../../common/singleProduct";
+import useStore from "../../../store/store";
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       const response = await fetch('http://localhost:3001/bags');
-//       const result = await response.json();
-//       setBag(result);
-//     };
-//     fetchData();
-//   }, []);
+const BagsList = () => {
+  const [bags, setBags] = useState([]);
+  const [filteredBags, setFilteredBags] = useState([]);
+  const selectedCategoryId = useStore((state) => state.selectedCategoryId);
+  const selectedMaterialId = useStore((state) => state.selectedMaterialId);
+  const selectedSizeId = useStore((state) => state.selectedSizeId);
+  const selectedColorId = useStore((state) => state.selectedColorId);
 
-//   // Dışa aktarılması gereken fonksiyon
- 
-//   const doFilter = (id,type) => {
-//     console.log("filter");
-//     console.log(id, "id");
-  
-//   let newFilter=[]
-//   if(type=="color"){
-//      newFilter = bags.filter((bag)=>bag.colorId == id)
-//   }
-//   if(type=="size"){
-//      newFilter = bags.filter((bag)=>bag.sizeId == id)
-//   }
-//   if(type=="material"){
-//     newFilter = bags.filter((bag)=>bag.materialId == id)
-//   }
-//   if(type=="category"){
-//     newFilter = bags.filter((bag)=>bag.categoryId == id)
-//   }
-  
-  
-//   setFilteredBags(newFilter);
-//    }
-//   const resetFilter =(type)=>{
-//     if(type=="reset"){
-//       setFilteredBags(bags)
-//     }
-//   }
-  
-  
-//   return (
-//     <div className='grid grid-cols-2 gap-[23px] '>
-//       {bags && bags.map(bag =>
-//         <SingleProduct key={bag.id} description={bag.description} image={bag.image} />
-//       )}
-//     </div>
-//   );
-// };
+      const fetchData = async () => {
+        const response = await fetch("http://localhost:3001/bags");
+        const result = await response.json();
+        setBags(result);
+      };
+  const fetchProd = async () => {
+    const resp = await fetch("http://localhost:3001/bags");
 
-// ;
-// export default BagsList;
+    const data = await resp.json();
 
+    let newFilter = data;
 
+    if (selectedColorId) {
+      newFilter = [...newFilter].filter(
+        (item) => item.colorId == selectedColorId
+      );
+    }
+    if (selectedSizeId) {
+      newFilter = [...newFilter].filter(
+        (item) => item.sizeId == selectedSizeId
+      );
+    }
+    if (selectedCategoryId) {
+      newFilter = [...newFilter].filter(
+        (item) => item.categoryId == selectedCategoryId
+      );
+    }
+    if (selectedMaterialId) {
+      newFilter = [...newFilter].filter(
+        (item) => item.materialId == selectedMaterialId
+      );
+    }
+    console.log(newFilter, "newFilter");
+    setFilteredBags(newFilter);
+  };
 
+  useEffect(() => {
+    fetchData();
+    fetchProd();
+  }, []);
+
+  useEffect(() => {
+    fetchProd();
+  }, [
+    selectedCategoryId,
+    selectedMaterialId,
+    selectedSizeId,
+    selectedColorId,
+    bags,
+  ]);
+
+  console.log("Filtered Bags:", filteredBags);
+  return (
+    <div className="grid grid-cols-2 gap-[23px] ">
+      {filteredBags.length===0 ? (<div className="flex items-center justify-center">
+        <h1 className="font-bold text-[60px] ">Items Not Found</h1>
+      </div> ):(
+        filteredBags.map((bag) => (
+          <SingleProduct
+            key={bag.id}
+            description={bag.description}
+            image={bag.image}
+            id={bag.id}
+          />)
+        ))}
+    </div>
+  );
+};
+
+export default BagsList;

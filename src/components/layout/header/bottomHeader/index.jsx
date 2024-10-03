@@ -4,7 +4,17 @@ import { LuUser2 } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa6";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import useStore from "../../../../store/store";
 const BottomHeader = () => {
+  const {isLogin,setLogout}=useStore();
+
+  const logout =()=>{
+    localStorage.setItem("isLogin","false");
+    localStorage.setItem("userEmail","");
+    setLogout(false)
+  }
+
+
   const navElements = [
     { title: "Evening bags", href: "/eveningBags" },
     { title: "Shoulder bag", href: "/shoulderBag" },
@@ -31,9 +41,9 @@ const BottomHeader = () => {
             </div>
           </div>
           <div className="flex gap-[20px] items-center">
-        <Link to="/login" > <button className="flex items-center gap-[10px]">
+      <Link to="/login" > <button className="flex items-center gap-[10px]" onClick={()=>{logout()}}>
               <LuUser2 className="w-6 h-6" />
-              <p className="text-[14px] font-medium text-[#2E2E2E]">Sign In</p>
+         {isLogin ? <p className="text-[14px] font-medium text-[#2E2E2E]">Log out</p> : <p className="text-[14px] font-medium text-[#2E2E2E]">Sign In</p>}     
             </button></Link>
             <button className="flex items-center gap-[10px]">
               <FaRegHeart className="w-6 h-6" />

@@ -232,6 +232,30 @@
       "username": "Farashka15",
       "email": "farahnv@code.edu.az",
       "password": "12345"
+    },
+    {
+      "id": "93ec",
+      "username": "ElvinAhadov",
+      "email": "elvin@gmail.com",
+      "password": "12345",
+      "basket": [
+        {
+          "productId": "",
+          "count": 0
+        }
+      ]
+    },
+    {
+      "id": "d97e",
+      "username": "ulka",
+      "email": "ulkar@gmail.com",
+      "password": "12345",
+      "basket": [
+        {
+          "productId": "",
+          "count": 0
+        }
+      ]
     }
   ]
 }

@@ -1,36 +1,64 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import { FaGoogle } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const SignUp = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
 
     const newUser = {
       username,
       email,
       password,
+      basket:[{productId:"",count:0}]
     };
 
     try {
-      await axios.post("http://localhost:3001/users", newUser);
-      alert("User created successfully!");
-    } catch (error) {
-      console.error("There was an error creating the user!", error);
+      const response = await fetch("http://localhost:3001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newUser),
+      });
+
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await response.json();
+      alert("User created succesfully");
+     navigate('/login') 
+    } 
+      
+    catch (error) {
+      alert("Error creating user");
     }
+  
   };
 
   return (
     <div>
       <div className="flex flex-col items-center justify-center mt-[128px] mb-[148px]">
         <button className="py-[9px] px-[71px] border border-[#B6B7BC] rounded-[4px] flex items-center justify-center flex-row gap-2">
+          <img src="" alt="" />
           <p className="text-[14px] font-medium text-[#5C5F6A]">
             Continue with Google
           </p>
+          <FaGoogle />
         </button>
 
         <div className="flex flex-row">
@@ -40,8 +68,6 @@ const SignUp = () => {
           </h1>
           <div className="border-[#E6E7E8] border mt-[40px] w-[136px] h-0 "></div>
         </div>
-
-        {/* Form */}
         <form className="flex flex-col w-[320px]" onSubmit={handleSubmit}>
           <label
             htmlFor="username"
@@ -84,23 +110,30 @@ const SignUp = () => {
             onChange={(e) => setPassword(e.target.value)}
             className="py-[10px] px-[15px] mb-[15px] w-full border border-[#E6E7E8] rounded-[6px]"
           />
-
-          <button className="text-[12px] text-[#474B57] font-medium text-start mb-6">
-            By creating an account you agree with our Terms of Service, Privacy
-            Policy,
-          </button>
-
+          
+          <label
+            htmlFor="confirm-password"
+            className="text-[14px] font-medium text-[#474B57] text-start"
+          >
+            Confirm password
+          </label>
+          <input
+            type="password"
+            id="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="py-[10px] px-[15px] mb-[15px] w-full border border-[#E6E7E8] rounded-[6px]"
+          />
+          
           <div>
-            <button className="bg-[#0E1422] py-3 px-6 w-full justify-center items-center gap-[6px] text-[#FFFFFF] text-[14px] hover:bg-[#0075ff] font-medium rounded-[4px] flex">
+            <button className="bg-[#0E1422] py-3 px-6 w-full justify-center items-center gap-[6px] text-[#FFFFFF] text-[14px] hover:bg-[#0075ff] font-medium rounded-[4px] flex ">
               Create Account
             </button>
           </div>
-        </form>
-        <Link to="/login">
-          <button className="text-[14px] font-normal text-[#5C5F6A] mt-6 text-center">
+          <Link to={"/login"}>
             Already have an account? Log in
-          </button>
-        </Link>
+          </Link>
+        </form>
       </div>
     </div>
   );

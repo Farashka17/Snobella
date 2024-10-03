@@ -4,7 +4,7 @@ import { CiHeart } from "react-icons/ci";
 import { RiDeleteBin7Line } from "react-icons/ri";
 
 
-const SingleCartProduct = () => {
+const SingleCartProduct = ({name,image,size,color,price,count}) => {
   return (
     <div className="flex p-4 gap-6 border border-[#E4E4E4] rounded-[8px]">
       <div className="bg-[#F9F9F9] rounded-[8px] py-5 px-3">
@@ -12,15 +12,17 @@ const SingleCartProduct = () => {
       </div>
       <div>
         <div className="flex gap-[115px] items-center">
-          <p className="text-[#212121] text-[16px] font-medium">Hotel Magique  Love and Magique Tote Bag</p>
-          <p className="text-[#212121] text-[18px] font-medium">US $20.00</p>
+          <p className="text-[#212121] text-[16px] font-medium"> {name}</p>
+          <p className="text-[#212121] text-[18px] font-medium">US ${(price*count).toFixed(2)}</p>
         </div>
         <div className="flex gap-5 mt-3 mb-2">
-          <p className="text-[#212121] text-opacity-75 text-[14px] font-normal">Size: <span>XS</span></p>
-          <p className="text-[#212121] text-opacity-75 text-[14px] font-normal">Color: <span> Grey</span></p>
+          <p className="text-[#212121] text-opacity-75 text-[14px] font-normal"> Size : {size}</p>
+          <p className="text-[#212121] text-opacity-75 text-[14px] font-normal"> Color : {color}</p>
         </div>
         <div className="flex gap-5 mt-3 mb-2">
-          <p className="text-[#212121] text-opacity-75 text-[14px] font-normal">Delivery:<span>25-32 days</span></p>
+        <p className="text-[#212121] text-opacity-75 text-[14px]">
+            Count : {count}
+          </p>
         </div>
         <p className="text-[#212121] text-opacity-75 text-[14px] font-normal">Quality</p>
           <p className="mt-2">dropdown sheyisi</p>
