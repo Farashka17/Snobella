@@ -228,32 +228,14 @@
   ],
   "users": [
     {
-      "id": "bf2b",
-      "username": "Farashka15",
-      "email": "farahnv@code.edu.az",
-      "password": "12345"
-    },
-    {
-      "id": "93ec",
+      "id": "64dc",
       "username": "ElvinAhadov",
-      "email": "elvin@gmail.com",
-      "password": "12345",
-      "basket": [
+      "email": "elvinahadov@gmail.com",
+      "password": "123",
+      "basket": [],
+      "wishList": [
         {
-          "productId": "",
-          "count": 0
-        }
-      ]
-    },
-    {
-      "id": "d97e",
-      "username": "ulka",
-      "email": "ulkar@gmail.com",
-      "password": "12345",
-      "basket": [
-        {
-          "productId": "",
-          "count": 0
+          "productId": ""
         }
       ]
     }

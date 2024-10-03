@@ -23,7 +23,8 @@ const SignUp = () => {
       username,
       email,
       password,
-      basket:[{productId:"",count:0}]
+      basket:[{productId:"",count:0}],
+      wishList:[{productId:""}]
     };
 
     try {

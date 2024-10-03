@@ -74,6 +74,7 @@ const BagsList = () => {
             description={bag.description}
             image={bag.image}
             id={bag.id}
+            price={bag.price}
           />)
         ))}
     </div>

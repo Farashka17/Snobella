@@ -3,7 +3,7 @@ import React from 'react'
 const Payment = () => {
   return (
     <div>
-     <div className='bg-[#F9F9F9] py-8 px-6 rounded-[8px]'>
+     {/* <div className='bg-[#F9F9F9] py-8 px-6 rounded-[8px]'>
         <div className='flex justify-between'>
             <p className='text-[#212121] text-[16px] font-normal'>Your subtotal</p>
             <p className='text-[#212121] text-[16px] font-normal'>US $20.00</p>
@@ -23,7 +23,7 @@ const Payment = () => {
         </div>
      </div>
      <button className='py-[13px] bg-[#DF4244] w-full rounded-[8px] my-[23px] text-[16px] text-[#fff] font-medium'>Confirm cart</button>
-     <button className='py-[13px] border border-[#212121] w-full rounded-[8px] text-[16px]  font-medium'>Cash payment</button>
+     <button className='py-[13px] border border-[#212121] w-full rounded-[8px] text-[16px]  font-medium'>Cash payment</button> */}
 
      
     </div>

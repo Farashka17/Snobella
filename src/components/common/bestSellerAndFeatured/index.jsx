@@ -29,7 +29,7 @@ const BestSellerAndFeatured = ({title}) => {
      </div>
       <div className=' flex justify-between items-center'>
       {bags && bags.slice(0,3).map(bag=>
-       <SingleProduct key={bag.id} description={bag.description} image={bag.image}/>
+       <SingleProduct key={bag.id} id={bag.id} description={bag.description} image={bag.image} price={bag.price}/>
       )}
 </div>
     </div>

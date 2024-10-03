@@ -45,10 +45,10 @@ const BottomHeader = () => {
               <LuUser2 className="w-6 h-6" />
          {isLogin ? <p className="text-[14px] font-medium text-[#2E2E2E]">Log out</p> : <p className="text-[14px] font-medium text-[#2E2E2E]">Sign In</p>}     
             </button></Link>
-            <button className="flex items-center gap-[10px]">
+            <Link to="/wishlist" >    <button className="flex items-center gap-[10px]">
               <FaRegHeart className="w-6 h-6" />
               <p className="text-[14px] font-medium text-[#2E2E2E]">Wishlist</p>
-            </button>
+            </button></Link>
           <Link to="/cart" ><button className="flex items-center gap-[10px]">
               <HiOutlineShoppingBag className="w-6 h-6" />
               <p className="text-[14px] font-medium text-[#2E2E2E]">Basket</p>

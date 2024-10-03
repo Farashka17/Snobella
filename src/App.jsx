@@ -11,6 +11,7 @@ import ProductPage from './pages/productPage/productPage'
 import {Routes,Route} from 'react-router-dom'
 import RegisterPage from './pages/register/registerPage'
 import LoginPage from './pages/login/loginPage'
+import WishlistPage from './pages/wishlist/wishlist'
 
 function App() {
   
@@ -25,18 +26,15 @@ function App() {
       <Route path="*" element={<HomePage/>} />
       <Route path="/register" element={<RegisterPage/>} />
       <Route path="/login" element={<LoginPage/>} />
+      <Route path="/wishlist" element={<WishlistPage/>} />
+
+
 
     </Routes>
     <Footer/>
-    {/* <RegisterPage/>
-    <LoginPage/> */}
+  
     </>
   )
 }
 
 export default App
- {/* <HomePage/> */}
-   
-    {/* <ProductList/>  */}
-     {/* <ProductPage/>  */}
-   {/* <CartPage/> */}
