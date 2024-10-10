@@ -3,7 +3,7 @@ import { IoIosArrowUp } from "react-icons/io";
 import BigBagpack from "./../../../assets/images/BigBagpack.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoMdHeartEmpty } from "react-icons/io";
-const Product = () => {
+const Product = ({ product }) => {
   return (
     <div className="flex gap-[64px]">
       {/* sol */}
@@ -36,7 +36,7 @@ const Product = () => {
       </div>
       {/* sag */}
       <div>
-        <p className="text-[24px] font-medium text-[#212121]"> Hotel Magique Love and Magique Tote Bag</p>
+        <p className="text-[24px] font-medium text-[#212121]">{product.name}</p>
         <div className="flex items-center gap-[10px] mt-2"> 
           <div className="flex items-center">
             {[...Array(5)].map((_, index) => (
